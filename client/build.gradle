@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+dependencies {
+  compile project(path: ':api', configuration: 'restClient')
+  compile group: 'com.linkedin.pegasus', name: 'r2-netty', version: '11.0.17'
+  compile group: 'com.linkedin.parseq', name: 'parseq', version: '2.6.17'
+  compile group: 'com.linkedin.parseq', name: 'parseq-http-client', version: '2.6.17'
+  compile group: 'com.linkedin.parseq', name: 'parseq-restli-client', version: '2.6.17'
+}
+
+task startFortunesClient(type: JavaExec) {
+  main = 'com.example.fortune.RestLiFortunesClient'
+  // jvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"] // uncomment to enable remote debugging on port 5005
+  classpath = sourceSets.main.runtimeClasspath
+}

@@ -1,0 +1,22 @@
+{
+  "name" : "fortunes",
+  "namespace" : "com.example.fortune",
+  "path" : "/fortunes",
+  "schema" : "com.example.fortune.Fortune",
+  "doc" : "generated from: com.example.fortune.impl.FortunesResource",
+  "collection" : {
+    "identifier" : {
+      "name" : "fortuneId",
+      "type" : "long"
+    },
+    "supports" : [ "get", "get_all" ],
+    "methods" : [ {
+      "method" : "get"
+    }, {
+      "method" : "get_all"
+    } ],
+    "entity" : {
+      "path" : "/fortunes/{fortuneId}"
+    }
+  }
+}
